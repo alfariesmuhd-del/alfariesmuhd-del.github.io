@@ -45,10 +45,26 @@ a{color:var(--acc)}
 .mail{font-size:clamp(20px,4vw,32px);text-decoration:none;border-bottom:2px solid var(--acc);transition:.2s}
 .mail:hover{color:var(--acc2)}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}h1 .ch,.rv{opacity:1;transform:none}}
+.nav{position:fixed;top:0;left:0;right:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:14px 24px;background:#0a0808cc;backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .logo{font:700 15px ui-monospace,Consolas,monospace;letter-spacing:.14em;color:var(--ink);text-decoration:none}.nav .logo b{color:var(--acc)}
+.nav button{background:none;border:1px solid var(--line);color:var(--ink);border-radius:8px;width:40px;height:36px;font-size:20px;cursor:pointer}
+.nav button:hover{border-color:var(--acc)}
+.menu{position:fixed;top:63px;right:24px;z-index:10;display:none;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px;min-width:170px}
+.menu.open{display:flex}.menu a{color:var(--ink);text-decoration:none;padding:10px 14px;border-radius:6px;font:13px ui-monospace,Consolas,monospace;letter-spacing:.1em;text-transform:uppercase}
+.menu a:hover{background:#2a1212;color:var(--acc)}
+.pill{align-self:flex-start;border:1px solid var(--acc);color:var(--acc2);background:#2a121255;padding:5px 14px;border-radius:999px;font:12px ui-monospace,Consolas,monospace;letter-spacing:.1em}
+.fab{position:fixed;right:20px;bottom:20px;z-index:10;width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--acc),var(--acc2));display:grid;place-items:center;font-size:24px;text-decoration:none;box-shadow:0 6px 24px #ef444477;transition:transform .2s}
+.fab:hover{transform:scale(1.1)}
+section{scroll-margin-top:70px}
+.hero{padding-top:84px}
 </style></head><body>
 <canvas id="net"></canvas>
-<main>
+<nav class="nav"><a class="logo" href="#top">ALFARIES<b>.</b>DEV</a><button id="mb" aria-label="Menu" aria-expanded="false">&#9776;</button></nav>
+<div class="menu" id="menu"><a href="#exp">Experience</a><a href="#edu">Education</a><a href="#wins">Wins</a><a href="#lead">Leadership</a><a href="#tools">Toolbox</a><a href="#hello">Contact</a></div>
+<a class="fab" href="mailto:alfariesmuhd@gmail.com" aria-label="Email me" title="Email me">&#9993;</a>
+<main id="top">
 <div class="hero">
+<div class="pill">Welcome to My Digital Space</div>
 <div class="mono k">Electronic Network Design / Penang, Malaysia</div>
 <h1 id="name">Muhamad Al-Faries Hafizi</h1>
 <div class="role" id="role"></div>
@@ -61,27 +77,27 @@ a{color:var(--acc)}
 <div class="scroll mono">scroll</div>
 </div>
 
-<section class="rv"><h2 class="mono">Signal path / experience</h2>
+<section class="rv" id="exp"><h2 class="mono">Signal path / experience</h2>
 <div class="tl" id="tl"><i></i>
 <div class="card rv"><b>Fiber Optic Technician</b><small>UFITS Resource, Kedah / Oct to Nov 2022</small><p>Installed fiber optic servers, labeled cables and installed over 300 cables without errors.</p></div>
 <div class="card rv"><b>Production Technician</b><small>ams OSRAM Opto Semiconductors, Bayan Lepas</small><p>Maintained and troubleshot production equipment, ran machine conversions and tool changes.</p></div>
 <div class="card rv"><b>Food Delivery Rider</b><small>Grab Malaysia (GrabFood)</small><p>Delivered orders on time and planned routes in the Grab app.</p></div>
 </div></section>
 
-<section class="rv"><h2 class="mono">Education</h2>
+<section class="rv" id="edu"><h2 class="mono">Education</h2>
 <div class="grid">
 <div class="card"><b>B. Electronic Engineering Technology (Hons.)</b><small>Electronic Network Design / UniMAP / CGPA 3.12</small></div>
 <div class="card"><b>Diploma, Database Management and Application Web</b><small>Balik Pulau Vocational College / CGPA 3.67</small></div>
 </div></section>
 
-<section class="rv"><h2 class="mono">Wins</h2>
+<section class="rv" id="wins"><h2 class="mono">Wins</h2>
 <div class="grid">
 <div class="card"><span class="medal silver">Silver</span><br><b>Cat Hotel Management System</b><small>EREKA 2026 Innovation Competition</small></div>
 <div class="card"><span class="medal gold">Gold</span><br><b>Creative Innovation Idea Competition</b><small>ICIIC 2023, international</small></div>
 <div class="card"><span class="medal">Participant</span><br><b>Computer Programming Competition</b><small>PPKomp 2021, Central Region</small></div>
 </div></section>
 
-<section class="rv"><h2 class="mono">Leadership</h2>
+<section class="rv" id="lead"><h2 class="mono">Leadership</h2>
 <div class="grid">
 <div class="card"><b>Program Director</b><small>Graduate Pro Masterclass / MPKK UniMAP / 2026</small></div>
 <div class="card"><b>Program Director</b><small>Career Talk Program / MPKK UniMAP / 2026</small></div>
@@ -89,17 +105,17 @@ a{color:var(--acc)}
 <div class="card"><b>Emergency Response Team</b><small>Exco, plus Perlis floods aid volunteer / 2025</small></div>
 </div></section>
 
-<section class="rv"><h2 class="mono">Toolbox</h2>
+<section class="rv" id="tools"><h2 class="mono">Toolbox</h2>
 <div class="tags"><span>HTML</span><span>PHP</span><span>WordPress</span><span>Java</span><span>Office</span><span>Canva</span><span>Sony Vegas</span><span>Cisco IoT</span><span>Oracle DB design</span><span>SKM Level 3</span><span>Bahasa Malaysia</span><span>English</span></div></section>
 
-<section class="rv"><h2 class="mono">Say hello</h2>
+<section class="rv" id="hello"><h2 class="mono">Say hello</h2>
 <a class="mail" href="mailto:alfariesmuhd@gmail.com">alfariesmuhd@gmail.com</a></section>
 </main>
 
 <script>
 // name: letter-by-letter rise
 var n=document.getElementById("name"),t=n.textContent;n.textContent="";n.setAttribute("aria-label",t);
-t.split("").forEach(function(c,i){var s=document.createElement("span");s.className="ch";s.textContent=c===" "?"\u00a0":c;s.style.animationDelay=(i*35)+"ms";n.appendChild(s)});
+t.split("").forEach(function(c,i){var s=document.createElement("span");s.className="ch";s.textContent=c===" "?"\u00a0":c;s.style.animationDelay=(i*35)+"ms";var L=t.lastIndexOf(" ")+1;if(i>=L){var q=(i-L)/Math.max(t.length-L-1,1);s.style.color="rgb(255,"+Math.round(68+70*q)+","+Math.round(68+24*q)+")"}n.appendChild(s)});
 // role typing loop
 var roles=["Electronic Network Design student","Fiber optic technician","Web developer","Program director"],ri=0,ci=0,del=false,R=document.getElementById("role");
 (function tick(){var w=roles[ri];R.textContent=w.slice(0,ci);
@@ -134,4 +150,6 @@ setInterval(spawn,180);
   var gr=g.createRadialGradient(x,y,0,x,y,10);gr.addColorStop(0,"rgba(255,138,92,.95)");gr.addColorStop(1,"rgba(239,68,68,0)");
   g.fillStyle=gr;g.beginPath();g.arc(x,y,10,0,6.3);g.fill();return true});
  requestAnimationFrame(draw)})();
+document.getElementById("mb").onclick=function(){var o=document.getElementById("menu").classList.toggle("open");this.setAttribute("aria-expanded",o)};
+document.getElementById("menu").onclick=function(){this.classList.remove("open")};
 </script></body></html>
